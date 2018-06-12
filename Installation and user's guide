@@ -1,0 +1,57 @@
+INSTALLATION STEPS:
+
+	- Step 1: + import database (database's name: "quanlysv2", database's status : waiting for the FIRST semester 20181)
+		  + please set your local system clock to a day between 2017/11/1 - 2017/12/1 (2017/11/2 is a good example)	
+	- Step 2: + run .jar file in the "Excutable/dist" folder (or import project at the "Whole source code of the project" folder into Netbeans IDE, then run the project)
+		  + follow the statuses explanations for more easily testing
+
+------------------------------------------------------------------------------------------------------------------------------------------
+USER'S GUIDE:
+
+	- The project is time-dependent, it depends on the local system clock, so while running, please follow the explanations below for the best result.
+	- Some notices, definitions before testing
+		+ there are 2 types of student: Unit student (who have to register courses and classes themself) and Yearly student (the System do the courses and classes registration)
+		+ there are 2 semesters each year: the first semester (1/1 - 1/7) và the second one (1/7 - 1/1 the following year)
+		+ courses registration time: within 1 month before each semester starting 2 months
+		+ classes registration time: within 1 month before each semester starting 1 months
+		+ scores are input after each semester's end.
+		+ adding new students is only available in October (new students added is first year students)
+
+
+******************************************************************************************************************************************************
+	- UNTIL NOW, THE PROJECT JUST HAS ALL MY FUNCTIONS DONE, OTHER TEAMMATEs DIDN'T FINISHED THEIR TASKS UNFORTUNATELY, SO...
+	- MY ALL FUNCTIONS IS RELATIVE TO STUDY MANAGEMENT (COURSES/ CLASSES REGISTRATIONS), FOR MORE PARTICULARLY, PLEASE CHECK THE TRELLO LINK.
+	- LET'S START, below are the statuses of the System by time (20181 semester for example)
+******************************************************************************************************************************************************
+
+		...
+		+ within 2017/10: add/delete/edit students, admins, student classes, study programs, subjects...
+		+ start of 2017/11:
+ 				* the new semester 20181 is automatically initialized by the System
+				* courses registration time of 20181
+ 				* courses for Yearly students are automatically registered by the System
+				* Unit students are registering their courses
+		+ start of 2017/12:
+				* courses registration time is over, start of classes registration time
+				* classes of both Unit and Yearly students are automatically initialized by the System (corresponding to the quantity of courses registration)
+ 				* classes for Yearly studentsare automatically registered by the System
+				* Unit students are registering their classes
+		+ start of 2018/1:
+				* courses and classes registration time is over, time for studying
+		+ start of 2018/5:
+ 				* (20182 semester) the next semester 20182 is automatically initialized by the System
+				* (20182 semester) courses registration time of 20182
+ 				* (20182 semester) courses for Yearly students are automatically registered by the System
+				* (20182 semester) Unit students are registering their courses
+		+ start of 2018/6:
+				* (20182 semester) courses registration time is over, start of classes registration time
+				* (20182 semester) classes of both Unit and Yearly students are automatically initialized by the System (corresponding to the quantity of courses registration)
+ 				* (20182 semester) classes for Yearly studentsare automatically registered by the System
+				* (20182 semester) Unit students are registering their classes
+		+ start of 2018/7:
+				* 20181 semester is over
+				* inputting scores for 20181 semeseter
+				* (20182 semester) courses and classes registration time of 20182 semester is over, time for studying 20182 semester
+		...
+		
+		
