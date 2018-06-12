@@ -1,4 +1,2 @@
 # university
-OOP-DATABASE project
-JAVA core + JAVA Swing
-MySQL
+OOP-DATABASE project | JAVA core + JAVA Swing + MySQL
