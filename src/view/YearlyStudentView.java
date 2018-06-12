@@ -18,6 +18,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
     DefaultTableModel modelXemHocPhanPhaiHoc;//hien thi table admin
     DefaultTableModel modelXemLopMoPhaiHoc;//hien thi table admin
 
+    
     //nghia
     private DefaultTableModel modelKetQuaHocTap;
 
