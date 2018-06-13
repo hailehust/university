@@ -37,7 +37,7 @@ public class AdminView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -183,12 +183,12 @@ public class AdminView extends javax.swing.JFrame {
         setAutoRequestFocus(false);
 
         jTabbedPane3.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -296,6 +296,7 @@ public class AdminView extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTableSinhVien);
 
+        jButton_add.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-student-registration-25.png")); // NOI18N
         jButton_add.setText("Add");
         jButton_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,6 +304,7 @@ public class AdminView extends javax.swing.JFrame {
             }
         });
 
+        jButton_edit.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-pencil-25.png")); // NOI18N
         jButton_edit.setText("Edit");
         jButton_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,6 +312,7 @@ public class AdminView extends javax.swing.JFrame {
             }
         });
 
+        jButton_remove.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-trash-25.png")); // NOI18N
         jButton_remove.setText("Remove");
         jButton_remove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -422,17 +425,17 @@ public class AdminView extends javax.swing.JFrame {
         );
 
 
-        jTabbedPane3.addTab("Add Edit Delete", jPanel7);
+        jTabbedPane3.addTab("Student list", jPanel7);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 912, Short.MAX_VALUE)
+            .addGap(0, 998, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Graduation", jPanel6);
@@ -491,7 +494,7 @@ public class AdminView extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButton2)
@@ -532,7 +535,7 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(129, 129, 129))
             .addComponent(jScrollPane7)
@@ -540,7 +543,7 @@ public class AdminView extends javax.swing.JFrame {
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -584,12 +587,12 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(jButton6)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -631,14 +634,14 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(176, 176, 176))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButton8)
@@ -652,7 +655,7 @@ public class AdminView extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 920, Short.MAX_VALUE)
+            .addComponent(jTabbedPane4)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,6 +680,7 @@ public class AdminView extends javax.swing.JFrame {
 
         jLabel3.setText("Course ID");
 
+        jButtonRegisterCourse.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-study-25.png")); // NOI18N
         jButtonRegisterCourse.setText("Register course");
         jButtonRegisterCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -689,8 +693,8 @@ public class AdminView extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
                 .addComponent(jComboBoxSystemSemesterID1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -698,18 +702,18 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jTextFieldStudentID1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCourseID, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonRegisterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addComponent(jButtonRegisterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel1)
@@ -745,9 +749,10 @@ public class AdminView extends javax.swing.JFrame {
 
         jLabel5.setText("Student ID");
 
-        jLabel6.setText("Course class ID");
+        jLabel6.setText("Class ID");
 
-        jButtonRegisterCourseClass.setText("Register course class");
+        jButtonRegisterCourseClass.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-study-25.png")); // NOI18N
+        jButtonRegisterCourseClass.setText("Register class");
         jButtonRegisterCourseClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegisterCourseClassActionPerformed(evt);
@@ -764,34 +769,34 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jComboBoxSystemSemesterID2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jTextFieldStudentID2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCourseClassID, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButtonRegisterCourseClass, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                .addGap(26, 26, 26))
+                .addGap(28, 28, 28)
+                .addComponent(jButtonRegisterCourseClass, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                .addComponent(jScrollPane3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jComboBoxSystemSemesterID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonRegisterCourseClass)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5)
+                    .addComponent(jComboBoxSystemSemesterID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldStudentID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(jTextFieldCourseClassID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonRegisterCourseClass)))
+                    .addComponent(jLabel5)))
         );
 
-        jTabbedPane2.addTab("Register course class", jPanel5);
+        jTabbedPane2.addTab("Register class", jPanel5);
 
         jTableOpeningCourseClasses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -819,7 +824,8 @@ public class AdminView extends javax.swing.JFrame {
             }
         });
 
-        jButtonSeeOpeningCourseClasses.setText("See opening course classes");
+        jButtonSeeOpeningCourseClasses.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-view-details-25.png")); // NOI18N
+        jButtonSeeOpeningCourseClasses.setText("See opening classes");
         jButtonSeeOpeningCourseClasses.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSeeOpeningCourseClassesActionPerformed(evt);
@@ -838,35 +844,31 @@ public class AdminView extends javax.swing.JFrame {
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 998, Short.MAX_VALUE)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(74, 74, 74)
                 .addComponent(jLabel8)
-                .addGap(4, 4, 4)
-                .addComponent(jComboBoxSystemSemeserID3, 0, 253, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
+                .addComponent(jComboBoxSystemSemeserID3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldCourseID2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(48, 48, 48)
                 .addComponent(jButtonSeeOpeningCourseClasses)
-                .addGap(136, 136, 136))
-            .addComponent(jScrollPane5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                .addComponent(jScrollPane5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel11)
-                        .addComponent(jTextFieldCourseID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButtonSeeOpeningCourseClasses))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jComboBoxSystemSemeserID3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jButtonSeeOpeningCourseClasses)
+                    .addComponent(jTextFieldCourseID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jComboBoxSystemSemeserID3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)))
         );
 
         jTabbedPane2.addTab("Opening course classes", jPanel14);
@@ -910,7 +912,8 @@ public class AdminView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Manage study", jPanel3);
 
-        jLabelAdminID.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabelAdminID.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        jLabelAdminID.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-male-user-25.png")); // NOI18N
         jLabelAdminID.setText("adminID");
 
         jButtonLogout.setText("Logout");
@@ -920,8 +923,10 @@ public class AdminView extends javax.swing.JFrame {
             }
         });
 
+        jLabelToday.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-clock-25.png")); // NOI18N
         jLabelToday.setText("today");
 
+        jLabelSystemSemester.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-calendar-25.png")); // NOI18N
         jLabelSystemSemester.setText("systemSemester");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

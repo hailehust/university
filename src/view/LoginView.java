@@ -26,7 +26,7 @@ public class LoginView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -58,19 +58,18 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabelThongBao = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldUsername = new javax.swing.JTextField();
         jButtonLogin = new javax.swing.JButton();
         jPasswordFieldPassword = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Session");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-university-25.png")); // NOI18N
         jLabel1.setText("University management system - WakaiBuffalo team");
-
-        jLabelThongBao.setText("Login for use!!!");
 
         jLabel3.setText("Username");
 
@@ -82,6 +81,7 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
+        jButtonLogin.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-shutdown-25.png")); // NOI18N
         jButtonLogin.setText("Login");
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,36 +89,41 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-graduate-75.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(3, 3, 3))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelThongBao)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButtonLogin)
-                        .addComponent(jTextFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                        .addComponent(jPasswordFieldPassword)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(3, 3, 3))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonLogin)
+                            .addComponent(jTextFieldUsername)
+                            .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(37, 37, 37))
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabelThongBao)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel2)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel3)
                     .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,7 +133,7 @@ public class LoginView extends javax.swing.JFrame {
                     .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -173,9 +178,9 @@ public class LoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelThongBao;
     private javax.swing.JPasswordField jPasswordFieldPassword;
     private javax.swing.JTextField jTextFieldUsername;
     // End of variables declaration//GEN-END:variables

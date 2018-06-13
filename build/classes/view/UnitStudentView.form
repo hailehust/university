@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="SinhVienTCView"/>
+    <Property name="title" type="java.lang.String" value="Unit Student Session"/>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Default Cursor"/>
     </Property>
@@ -36,7 +36,7 @@
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               <Component id="jLabelToday" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabelStudentID" min="-2" pref="116" max="-2" attributes="0"/>
+              <Component id="jLabelStudentID" min="-2" pref="145" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButtonLogout" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -124,7 +124,7 @@
                                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="167" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="LabelMSSV" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                   <Component id="LabelTrangThai1" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
@@ -132,21 +132,21 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="LabelNganhHoc" alignment="0" pref="310" max="32767" attributes="0"/>
-                                          <Component id="LabelChuongTrinhHoc" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="LabelLopSV" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="LabelNganhHoc" alignment="0" pref="310" max="32767" attributes="0"/>
+                                  <Component id="LabelChuongTrinhHoc" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LabelLopSV" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="84" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -175,9 +175,9 @@
                                   <Component id="LabelLopSV" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="112" max="32767" attributes="0"/>
+                              <EmptySpace pref="134" max="32767" attributes="0"/>
                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -210,7 +210,10 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton2">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Chang password"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-password-reset-25.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Change password"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -265,18 +268,18 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" pref="885" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                              <Component id="jTextField1" min="-2" pref="132" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel8" min="-2" pref="47" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                              <Component id="jTextField1" min="-2" pref="132" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -286,11 +289,11 @@
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" pref="231" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="241" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jTextField1" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton1" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTextField1" max="32767" attributes="0"/>
+                                  <Component id="jButton1" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -367,6 +370,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton1">
                       <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-search-25.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Search course result"/>
                       </Properties>
                     </Component>
@@ -400,10 +406,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jTabbedPane2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jTabbedPane2" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -424,8 +427,9 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" pref="935" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jComboBoxSystemSemesterID1" min="-2" pref="82" max="-2" attributes="0"/>
@@ -437,21 +441,20 @@
                               <Component id="jButtonDangKyHocPhan" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jButtonXoaDangKyHocPhan" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="177" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jScrollPane2" min="-2" pref="249" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane2" pref="260" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="2" attributes="0">
                                   <Component id="jLabel14" alignment="2" min="-2" max="-2" attributes="0"/>
                                   <Component id="jComboBoxSystemSemesterID1" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldCourseID1" alignment="2" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel9" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldCourseID1" alignment="2" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonDangKyHocPhan" alignment="2" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonXoaDangKyHocPhan" alignment="2" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -501,6 +504,9 @@
                     </Container>
                     <Component class="javax.swing.JButton" name="jButtonDangKyHocPhan">
                       <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-study-25.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Register course"/>
                       </Properties>
                       <Events>
@@ -534,6 +540,9 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButtonXoaDangKyHocPhan">
                       <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-clear-symbol-25.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Delete course"/>
                       </Properties>
                       <Events>
@@ -545,8 +554,8 @@
                 <Container class="javax.swing.JPanel" name="jPanel5">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Course classes">
-                        <Property name="tabTitle" type="java.lang.String" value="Course classes"/>
+                      <JTabbedPaneConstraints tabName="Classes">
+                        <Property name="tabTitle" type="java.lang.String" value="Classes"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -566,9 +575,9 @@
                               <Component id="jTextFieldCourseClassID" min="-2" pref="125" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButtonRegisterCourseClass" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Component id="jButtonDeleteCourseClass" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -639,7 +648,10 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButtonRegisterCourseClass">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Register course class"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-study-25.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Register class"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegisterCourseClassActionPerformed"/>
@@ -670,7 +682,10 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButtonDeleteCourseClass">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Delete registration"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-clear-symbol-25.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Delete class"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDeleteCourseClassActionPerformed"/>
@@ -709,24 +724,14 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPane4" pref="248" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="260" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldCourseID2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButtonSeeOpeningCourseClass" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jComboBoxSystemSemesterID3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="jButtonSeeOpeningCourseClass" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldCourseID2" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel11" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxSystemSemesterID3" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -799,7 +804,10 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButtonSeeOpeningCourseClass">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="See opening course classes"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-view-details-25.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="See opening classes"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSeeOpeningCourseClassActionPerformed"/>
@@ -833,6 +841,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="jButtonLogout">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/haile/Downloads/icons8-shutdown-25.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Logout"/>
       </Properties>
       <Events>
@@ -842,18 +853,27 @@
     <Component class="javax.swing.JLabel" name="jLabelStudentID">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Ubuntu" size="15" style="1"/>
+          <Font name="Ubuntu" size="15" style="0"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/haile/Downloads/icons8-graduate-25.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="studentID"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelSystemSemester">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/haile/Downloads/icons8-calendar-25.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="systemSemester"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelToday">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/haile/Downloads/icons8-clock-25.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="today"/>
       </Properties>
     </Component>
