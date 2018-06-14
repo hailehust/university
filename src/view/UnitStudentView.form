@@ -62,6 +62,7 @@
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPaneSinhVienTCView">
       <Properties>
+        <Property name="tabLayoutPolicy" type="int" value="1"/>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
 
@@ -95,6 +96,9 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+              <Properties>
+                <Property name="tabLayoutPolicy" type="int" value="1"/>
+              </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
@@ -124,13 +128,13 @@
                                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="167" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="LabelMSSV" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                   <Component id="LabelTrangThai1" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                   <Component id="LabelName" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -142,12 +146,12 @@
                                   <Component id="LabelChuongTrinhHoc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LabelLopSV" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="84" max="32767" attributes="0"/>
+                              <EmptySpace pref="197" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="420" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -268,31 +272,28 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel8" min="-2" pref="47" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane1" alignment="0" pref="935" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" pref="68" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jTextField1" min="-2" pref="132" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" pref="241" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="270" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jTextField1" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="jButton1" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -321,12 +322,12 @@
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="300" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -363,7 +364,10 @@
                     <Component class="javax.swing.JLabel" name="jLabel8">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Ubuntu" size="15" style="1"/>
+                          <Font name="Ubuntu" size="15" style="0"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/view/images/icons8-rating-25.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="CPA"/>
                       </Properties>
@@ -412,6 +416,9 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+              <Properties>
+                <Property name="tabLayoutPolicy" type="int" value="1"/>
+              </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
@@ -505,7 +512,7 @@
                     <Component class="javax.swing.JButton" name="jButtonDangKyHocPhan">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/haile/Downloads/icons8-study-25.png"/>
+                          <Image iconType="2" name="/home/haile/Downloads/icons8-add-new-25.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Register course"/>
                       </Properties>
@@ -565,19 +572,19 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel12" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBoxSystemSemesterID2" min="-2" pref="98" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel10" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jComboBoxSystemSemesterID2" min="-2" pref="98" max="-2" attributes="0"/>
+                              <EmptySpace pref="37" max="32767" attributes="0"/>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jTextFieldCourseClassID" min="-2" pref="125" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButtonRegisterCourseClass" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="jButtonRegisterCourseClass" min="-2" pref="143" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="jButtonDeleteCourseClass" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -649,7 +656,7 @@
                     <Component class="javax.swing.JButton" name="jButtonRegisterCourseClass">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/haile/Downloads/icons8-study-25.png"/>
+                          <Image iconType="3" name="/view/images/icons8-add-new-25.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Register class"/>
                       </Properties>
@@ -706,8 +713,8 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel1" max="32767" attributes="0"/>
+                              <EmptySpace pref="74" max="32767" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="77" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jComboBoxSystemSemesterID3" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
@@ -805,7 +812,7 @@
                     <Component class="javax.swing.JButton" name="jButtonSeeOpeningCourseClass">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="/home/haile/Downloads/icons8-view-details-25.png"/>
+                          <Image iconType="3" name="/view/images/icons8-view-details-25.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="See opening classes"/>
                       </Properties>

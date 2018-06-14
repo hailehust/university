@@ -1,6 +1,7 @@
 package view;
 
 import control.DAO;
+import java.util.Collections;
 import javax.swing.table.DefaultTableModel;
 import model.*;
 
@@ -18,7 +19,6 @@ public class YearlyStudentView extends javax.swing.JFrame {
     DefaultTableModel modelXemHocPhanPhaiHoc;//hien thi table admin
     DefaultTableModel modelXemLopMoPhaiHoc;//hien thi table admin
 
-    
     //nghia
     private DefaultTableModel modelKetQuaHocTap;
 
@@ -87,9 +87,11 @@ public class YearlyStudentView extends javax.swing.JFrame {
     public void getSystemSemesterID() {//get cac ma hoc ky he thong cua sinh vien dang lam viec
         //cho vao list item cua jComboBoxMaHocKyHeThong
         jComboBoxMaHocKyHeThong1.removeAllItems();
-        jComboBoxMaHocKyHeThong1.addItem("");
+//        jComboBoxMaHocKyHeThong1.addItem("");
         jComboBoxMaHocKyHeThong2.removeAllItems();
-        jComboBoxMaHocKyHeThong2.addItem("");
+//        jComboBoxMaHocKyHeThong2.addItem("");
+
+        Collections.reverse(university.findStudent(mssv).getHocKySinhVien());//dao thu tu trong 
 
         for (StudentSemester a : university.findStudent(university.findStudent(mssv).getMssv()).getHocKySinhVien()) {
             jComboBoxMaHocKyHeThong1.addItem(a.getSystemSemesterID());
@@ -189,7 +191,11 @@ public class YearlyStudentView extends javax.swing.JFrame {
         setTitle("Yearly Student Session");
         setFont(new java.awt.Font("Liberation Sans", 0, 10)); // NOI18N
 
+        jTabbedPane2.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+
         jPanelHoSoSinhvien.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+
+        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         jPanel8.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
 
@@ -255,7 +261,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(264, 264, 264)
                         .addComponent(jButton2)))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,6 +308,11 @@ public class YearlyStudentView extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTableKetQuaHocTap);
+        if (jTableKetQuaHocTap.getColumnModel().getColumnCount() > 0) {
+            jTableKetQuaHocTap.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jTableKetQuaHocTap.getColumnModel().getColumn(1).setPreferredWidth(200);
+            jTableKetQuaHocTap.getColumnModel().getColumn(5).setPreferredWidth(10);
+        }
 
         jLabel8.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-rating-25.png")); // NOI18N
         jLabel8.setText("CPA");
@@ -310,7 +321,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jLabel8)
@@ -340,6 +351,8 @@ public class YearlyStudentView extends javax.swing.JFrame {
         jTabbedPane2.addTab("PROFILE", jPanelHoSoSinhvien);
 
         jPanelTracuu.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+
+        jTabbedPane3.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         jTableHocPhanCanHoc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -371,7 +384,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(223, 223, 223)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,7 +409,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Course class ID", "Course ID", "Course name"
+                "Class ID", "Course ID", "Course name"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -408,6 +421,11 @@ public class YearlyStudentView extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(jTableLopMoCanHoc);
+        if (jTableLopMoCanHoc.getColumnModel().getColumnCount() > 0) {
+            jTableLopMoCanHoc.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTableLopMoCanHoc.getColumnModel().getColumn(1).setPreferredWidth(1);
+            jTableLopMoCanHoc.getColumnModel().getColumn(2).setPreferredWidth(300);
+        }
 
         jLabel10.setText("Semester");
 
@@ -421,7 +439,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(202, 202, 202)
                 .addComponent(jLabel10)
@@ -439,7 +457,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
                     .addComponent(jComboBoxMaHocKyHeThong2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jTabbedPane3.addTab("Yearly course classes", jPanel11);
+        jTabbedPane3.addTab("Yearly classes", jPanel11);
 
         javax.swing.GroupLayout jPanelTracuuLayout = new javax.swing.GroupLayout(jPanelTracuu);
         jPanelTracuu.setLayout(jPanelTracuuLayout);
@@ -476,7 +494,6 @@ public class YearlyStudentView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabelSystemSemester)
@@ -487,6 +504,7 @@ public class YearlyStudentView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButtonDangXuat)
                 .addGap(61, 61, 61))
+            .addComponent(jTabbedPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

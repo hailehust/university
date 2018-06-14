@@ -1,6 +1,7 @@
 package view;
 
 import control.DAO;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
@@ -41,7 +42,7 @@ public class UnitStudentView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                
+
                 if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -162,9 +163,12 @@ public class UnitStudentView extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(new java.awt.Color(231, 208, 208));
 
+        jTabbedPaneSinhVienTCView.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPaneSinhVienTCView.setOpaque(true);
 
         jPanelHoSoSinhvien.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+
+        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         jPanel8.setToolTipText("");
         jPanel8.setFocusCycleRoot(true);
@@ -212,12 +216,12 @@ public class UnitStudentView extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelMSSV, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelTrangThai1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
@@ -227,11 +231,11 @@ public class UnitStudentView extends javax.swing.JFrame {
                     .addComponent(LabelNganhHoc, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                     .addComponent(LabelChuongTrinhHoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LabelLopSV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(349, 349, 349)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,8 +282,13 @@ public class UnitStudentView extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTableKetQuaHocTap);
+        if (jTableKetQuaHocTap.getColumnModel().getColumnCount() > 0) {
+            jTableKetQuaHocTap.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jTableKetQuaHocTap.getColumnModel().getColumn(1).setPreferredWidth(300);
+        }
 
-        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/icons8-rating-25.png"))); // NOI18N
         jLabel8.setText("CPA");
 
         jButton1.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-search-25.png")); // NOI18N
@@ -289,28 +298,25 @@ public class UnitStudentView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(368, 368, 368))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 935, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(212, 212, 212)
+                .addGap(150, 150, 150)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(234, 234, 234))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1)
+                        .addComponent(jLabel8))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -330,6 +336,8 @@ public class UnitStudentView extends javax.swing.JFrame {
         jTabbedPaneSinhVienTCView.addTab("PROFILE", jPanelHoSoSinhvien);
 
         jPanelDangKyHocTap.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+
+        jTabbedPane2.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         jTableCourseRegistration.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -354,7 +362,7 @@ public class UnitStudentView extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTableCourseRegistration);
 
-        jButtonDangKyHocPhan.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-study-25.png")); // NOI18N
+        jButtonDangKyHocPhan.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-add-new-25.png")); // NOI18N
         jButtonDangKyHocPhan.setText("Register course");
         jButtonDangKyHocPhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,7 +444,7 @@ public class UnitStudentView extends javax.swing.JFrame {
 
         jLabel10.setText("Course class");
 
-        jButtonRegisterCourseClass.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-study-25.png")); // NOI18N
+        jButtonRegisterCourseClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/icons8-add-new-25.png"))); // NOI18N
         jButtonRegisterCourseClass.setText("Register class");
         jButtonRegisterCourseClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -467,19 +475,19 @@ public class UnitStudentView extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxSystemSemesterID2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(jLabel12)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxSystemSemesterID2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
                 .addComponent(jTextFieldCourseClassID, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonRegisterCourseClass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(66, 66, 66)
+                .addComponent(jButtonRegisterCourseClass, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
                 .addComponent(jButtonDeleteCourseClass)
-                .addGap(61, 61, 61))
+                .addGap(110, 110, 110))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -523,7 +531,7 @@ public class UnitStudentView extends javax.swing.JFrame {
             }
         });
 
-        jButtonSeeOpeningCourseClass.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-view-details-25.png")); // NOI18N
+        jButtonSeeOpeningCourseClass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/icons8-view-details-25.png"))); // NOI18N
         jButtonSeeOpeningCourseClass.setText("See opening classes");
         jButtonSeeOpeningCourseClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -544,8 +552,8 @@ public class UnitStudentView extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxSystemSemesterID3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92)
@@ -640,10 +648,11 @@ public class UnitStudentView extends javax.swing.JFrame {
         jComboBoxSystemSemesterID1.removeAllItems();
         jComboBoxSystemSemesterID2.removeAllItems();
         jComboBoxSystemSemesterID3.removeAllItems();
-
-        jComboBoxSystemSemesterID1.addItem("");
-        jComboBoxSystemSemesterID2.addItem("");
-        jComboBoxSystemSemesterID3.addItem("");
+//
+//        jComboBoxSystemSemesterID1.addItem("");
+//        jComboBoxSystemSemesterID2.addItem("");
+//        jComboBoxSystemSemesterID3.addItem("");
+        Collections.reverse(university.findStudent(mssv).getHocKySinhVien());//dao thu tu trong 
 
         for (StudentSemester a : university.findStudent(mssv).getHocKySinhVien()) {
             jComboBoxSystemSemesterID1.addItem(a.getSystemSemesterID());

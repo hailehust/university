@@ -4,6 +4,7 @@ import control.DAO;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 import view.AdminView;
 import view.LoginView;
@@ -82,7 +83,6 @@ public final class University {// this quản lý sinh viên (giống như hệ 
 
         //khởi tạo học kỳ hệ thống, học kỳ sinh viên nếu cần thiết
         this.initSemesters(dao);//khoi tao cac hoc ky he thong/ sinh vien nếu vừa sang thời điểm đăng ký học phần kỳ mới (thágn 11/5)
-
         //bắt đầu đăng ký học phần: tháng 11/t tháng 5
         this.registerCourseForAllYearlyStudent(dao);//dang ky hoc phan cho sinh vien nc neu vừa đến thời điểm đăng ký học phần kỳ mới(thágn 11/5)
 
