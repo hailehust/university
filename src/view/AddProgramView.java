@@ -150,14 +150,18 @@ public class AddProgramView extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "School \"" + schoolID + "\" doesn't exist!");
                 return;
             }
-
+            //ok
             Program p = new Program();
             p.setMaChuongTrinhHoc(programID);
             p.setTenChuongTrinhHoc(programName);
             p.setNganhHoc(adminView.getUniversity().findSchool(schoolID));
 
+            //add trong app
             adminView.getUniversity().getProgramList().add(p);
+            adminView.getUniversity().findSchool(schoolID).getChuongTrinhHoc().add(p);
+            //add trong database
             dao.addProgram(programID, programName, schoolID);
+            
 
             
             adminView.displayProgram();

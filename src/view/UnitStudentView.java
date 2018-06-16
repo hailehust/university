@@ -15,7 +15,7 @@ public class UnitStudentView extends javax.swing.JFrame {
 
     /*======================= ATTRIBUTEs ==============================*/
     private University university;
-    private String mssv;//mssv dang lam viec
+    private String studentID;//studentID dang lam viec
 
     //model de hien thi thong tin
     DefaultTableModel courseRegistrationModel;//hien thi table admin
@@ -31,9 +31,9 @@ public class UnitStudentView extends javax.swing.JFrame {
      * Creates new form SinhVienTCView
      *
      * @param university
-     * @param mssv
+     * @param studentID
      */
-    public UnitStudentView(University university, String mssv) {
+    public UnitStudentView(University university, String studentID) {
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -65,7 +65,7 @@ public class UnitStudentView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
         this.university = university;
-        this.mssv = mssv;
+        this.studentID = studentID;
 
         //khoi tao cac table de hien thi du lieu
         courseRegistrationModel = (DefaultTableModel) jTableCourseRegistration.getModel();
@@ -76,17 +76,17 @@ public class UnitStudentView extends javax.swing.JFrame {
         this.getSystemSemesterID();
 
         //khac
-        jLabelStudentID.setText(mssv);
+        jLabelStudentID.setText(studentID);
         jLabelToday.setText("Today: " + String.valueOf(university.getToday()));
         jLabelSystemSemester.setText("Semester: " + university.getSystemSemesterList().get(university.getSystemSemesterList().size() - 1).getSystemSemesterID());
 
         //nghia
-        LabelName.setText(university.findStudent(mssv).getHoTen());
-        LabelMSSV.setText(mssv);
-        LabelTrangThai1.setText(university.findStudent(mssv).getTrangThai());
-        LabelNganhHoc.setText(university.findSchool(university.findStudent(mssv).getMaNganhHoc()).getTenNganhHoc());
-        LabelChuongTrinhHoc.setText(university.findProgram(university.findStudent(mssv).getMaChuongTrinhHoc()).getTenChuongTrinhHoc());
-        LabelLopSV.setText(university.findStudent(mssv).getMaLopSinhVien());
+        jTextFieldFullname.setText(university.findStudent(studentID).getHoTen());
+        jTextFieldStudentID.setText(studentID);
+        jTextFieldStatus.setText(university.findStudent(studentID).getTrangThai());
+        jTextFieldSchool.setText(university.findSchool(university.findStudent(studentID).getMaNganhHoc()).getTenNganhHoc());
+        jTextFieldProgram.setText(university.findProgram(university.findStudent(studentID).getMaChuongTrinhHoc()).getTenChuongTrinhHoc());
+        jTextFieldStudentClass.setText(university.findStudent(studentID).getMaLopSinhVien());
 
         modelKetQuaHocTap = (DefaultTableModel) jTableKetQuaHocTap.getModel();
 
@@ -106,19 +106,20 @@ public class UnitStudentView extends javax.swing.JFrame {
         jPanelHoSoSinhvien = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        LabelName = new javax.swing.JLabel();
-        LabelMSSV = new javax.swing.JLabel();
-        LabelTrangThai1 = new javax.swing.JLabel();
-        LabelLopSV = new javax.swing.JLabel();
-        LabelChuongTrinhHoc = new javax.swing.JLabel();
-        LabelNganhHoc = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextFieldStudentID = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextFieldFullname = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextFieldStatus = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jTextFieldSchool = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jTextFieldProgram = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jTextFieldStudentClass = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableKetQuaHocTap = new javax.swing.JTable();
@@ -174,16 +175,6 @@ public class UnitStudentView extends javax.swing.JFrame {
         jPanel8.setFocusCycleRoot(true);
         jPanel8.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
 
-        jLabel2.setText("Full name");
-
-        jLabel3.setText("Student ID");
-
-        jLabel5.setText("School");
-
-        jLabel6.setText("Student class");
-
-        jLabel7.setText("Program");
-
         jButton2.setIcon(new javax.swing.ImageIcon("/home/haile/Downloads/icons8-password-reset-25.png")); // NOI18N
         jButton2.setText("Change password");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -192,73 +183,101 @@ public class UnitStudentView extends javax.swing.JFrame {
             }
         });
 
-        LabelName.setText("jLabel11");
+        jLabel13.setText("Student ID");
 
-        LabelMSSV.setText("jLabel11");
+        jTextFieldStudentID.setEditable(false);
 
-        LabelTrangThai1.setText("jLabel11");
+        jLabel15.setText("Full name");
 
-        LabelLopSV.setText("jLabel11");
+        jTextFieldFullname.setEditable(false);
 
-        LabelChuongTrinhHoc.setText("jLabel11");
+        jLabel16.setText("Status");
 
-        LabelNganhHoc.setText("jLabel11");
+        jTextFieldStatus.setEditable(false);
 
-        jLabel4.setText("Status");
+        jLabel17.setText("School");
+
+        jTextFieldSchool.setEditable(false);
+
+        jLabel18.setText("Program");
+
+        jTextFieldProgram.setEditable(false);
+
+        jLabel19.setText("Student class");
+
+        jTextFieldStudentClass.setEditable(false);
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel2.setText("Study, study more, study forerver! - Vladimir Ilyich Lenin");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(65, 65, 65)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelMSSV, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelTrangThai1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LabelNganhHoc, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                    .addComponent(LabelChuongTrinhHoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelLopSV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(197, Short.MAX_VALUE))
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(349, 349, 349)
-                .addComponent(jButton2)
-                .addContainerGap(420, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(349, 349, 349)
+                        .addComponent(jButton2))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldFullname, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(49, 49, 49)
+                                .addComponent(jTextFieldStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addGap(278, 321, Short.MAX_VALUE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldSchool, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(82, 82, 82)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldProgram)
+                                    .addComponent(jTextFieldStudentClass)))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel2)))
+                .addGap(87, 87, 87))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(LabelName)
-                    .addComponent(LabelNganhHoc))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextFieldStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextFieldSchool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel7)
-                    .addComponent(LabelMSSV)
-                    .addComponent(LabelChuongTrinhHoc))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel15)
+                    .addComponent(jTextFieldFullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(jTextFieldProgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(LabelTrangThai1)
-                    .addComponent(LabelLopSV)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextFieldStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(jTextFieldStudentClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(31, 31, 31)
                 .addComponent(jButton2)
                 .addGap(23, 23, 23))
         );
@@ -652,10 +671,10 @@ public class UnitStudentView extends javax.swing.JFrame {
 //        jComboBoxSystemSemesterID1.addItem("");
 //        jComboBoxSystemSemesterID2.addItem("");
 //        jComboBoxSystemSemesterID3.addItem("");
-        Collections.reverse(university.findStudent(mssv).getHocKySinhVien());//dao thu tu trong hoc ky cua sinh vien !
+        Collections.reverse(university.findStudent(studentID).getHocKySinhVien());//dao thu tu trong hoc ky cua sinh vien !
                                                                             //not hoc ky he thong
 
-        for (StudentSemester a : university.findStudent(mssv).getHocKySinhVien()) {
+        for (StudentSemester a : university.findStudent(studentID).getHocKySinhVien()) {
             jComboBoxSystemSemesterID1.addItem(a.getSystemSemesterID());
             jComboBoxSystemSemesterID2.addItem(a.getSystemSemesterID());
             jComboBoxSystemSemesterID3.addItem(a.getSystemSemesterID());
@@ -668,7 +687,7 @@ public class UnitStudentView extends javax.swing.JFrame {
         Course h;
         //duyet listMaHocPhanDangKy de hien thi tung hoc phan
 
-        for (String maHocPhan : university.findStudentSemester(mssv, jComboBoxSystemSemesterID1.getSelectedItem().toString()).getMaHocPhanDangKy()) {
+        for (String maHocPhan : university.findStudentSemester(studentID, jComboBoxSystemSemesterID1.getSelectedItem().toString()).getMaHocPhanDangKy()) {
             h = university.findCourse(maHocPhan);//tim ra hoc phan tuong ung ma s
             courseRegistrationModel.addRow(new Object[]{
                 h.getMaHocPhan(), h.getTenHocPhan()
@@ -683,7 +702,7 @@ public class UnitStudentView extends javax.swing.JFrame {
         CourseClass h;
         //duyet listMaHocPhanDangKy de hien thi tung hoc phan
 
-        for (String maLopMo : university.findStudentSemester(mssv, jComboBoxSystemSemesterID2.getSelectedItem().toString()).getMaLopMoDangKy()) {
+        for (String maLopMo : university.findStudentSemester(studentID, jComboBoxSystemSemesterID2.getSelectedItem().toString()).getMaLopMoDangKy()) {
             h = university.findCourseClass(maLopMo);
             courseClassRegistrationModel.addRow(new Object[]{
                 h.getMaLopMo(), h.getMaHocPhan(), university.findCourse(h.getMaHocPhan()).getTenHocPhan()
@@ -744,7 +763,7 @@ public class UnitStudentView extends javax.swing.JFrame {
 
     //nghia
     public void displayKetQuaHocTap() {
-        for (CourseResult k : university.findStudent(mssv).getBangDiem()) {
+        for (CourseResult k : university.findStudent(studentID).getBangDiem()) {
             modelKetQuaHocTap.addRow(new Object[]{
                 k.getMaHocPhan(), university.findCourse(k.getMaHocPhan()).getTenHocPhan(), k.getDiemGiuaKy(), k.getDiemCuoiKy(),
                 k.getDiemHocPhan(), k.getKetQua()
@@ -781,7 +800,7 @@ public class UnitStudentView extends javax.swing.JFrame {
 
     private void jButtonDangKyHocPhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDangKyHocPhanActionPerformed
         DAO dao = new DAO(university);
-        if (university.registerCourseForUnitStudent(mssv, jTextFieldCourseID1.getText(), jComboBoxSystemSemesterID1.getSelectedItem().toString(), dao)) {
+        if (university.registerCourseForUnitStudent(studentID, jTextFieldCourseID1.getText(), jComboBoxSystemSemesterID1.getSelectedItem().toString(), dao)) {
             displayCourseRegistration();
 
         }
@@ -801,7 +820,7 @@ public class UnitStudentView extends javax.swing.JFrame {
     private void jButtonRegisterCourseClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterCourseClassActionPerformed
         DAO dao = new DAO(university);
 
-        if (university.registerCourseClassForUnitStudent(mssv, jTextFieldCourseClassID.getText(), jComboBoxSystemSemesterID2.getSelectedItem().toString(), dao)) {
+        if (university.registerCourseClassForUnitStudent(studentID, jTextFieldCourseClassID.getText(), jComboBoxSystemSemesterID2.getSelectedItem().toString(), dao)) {
             displayCourseClassRegistration();
         }
     }//GEN-LAST:event_jButtonRegisterCourseClassActionPerformed
@@ -829,10 +848,6 @@ public class UnitStudentView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBoxSystemSemesterID3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        university.initPassSession(mssv);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jTableCourseRegistrationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableCourseRegistrationMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTableCourseRegistrationMouseClicked
@@ -845,7 +860,7 @@ public class UnitStudentView extends javax.swing.JFrame {
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(rootPane, "Please select course that you want to delete!");
         } else {
-            if (university.delelteCourseRegistrationOfUnitStudent(mssv,
+            if (university.delelteCourseRegistrationOfUnitStudent(studentID,
                     jTableCourseRegistration.getValueAt(selectedRow, 0).toString(), jComboBoxSystemSemesterID1.getSelectedItem().toString(), dao)) {
                 displayCourseRegistration();
             }
@@ -860,21 +875,19 @@ public class UnitStudentView extends javax.swing.JFrame {
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(rootPane, "Please select course class that you want to delete!");
         } else {
-            if (university.deleteCourseClassRegistrationOfUnitStudent(mssv,
+            if (university.deleteCourseClassRegistrationOfUnitStudent(studentID,
                     jTableCourseClassRegistration.getValueAt(selectedRow, 0).toString(), jComboBoxSystemSemesterID2.getSelectedItem().toString(), dao)) {
                 displayCourseClassRegistration();
             }
         }
     }//GEN-LAST:event_jButtonDeleteCourseClassActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new ChangePasswordView(university, studentID).setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /*======================= Các thuộc tính được khởi tạo bằng kéo thả ==========================================*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelChuongTrinhHoc;
-    private javax.swing.JLabel LabelLopSV;
-    private javax.swing.JLabel LabelMSSV;
-    private javax.swing.JLabel LabelName;
-    private javax.swing.JLabel LabelNganhHoc;
-    private javax.swing.JLabel LabelTrangThai1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonDangKyHocPhan;
@@ -890,13 +903,14 @@ public class UnitStudentView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelStudentID;
@@ -924,5 +938,11 @@ public class UnitStudentView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCourseClassID;
     private javax.swing.JTextField jTextFieldCourseID1;
     private javax.swing.JTextField jTextFieldCourseID2;
+    private javax.swing.JTextField jTextFieldFullname;
+    private javax.swing.JTextField jTextFieldProgram;
+    private javax.swing.JTextField jTextFieldSchool;
+    private javax.swing.JTextField jTextFieldStatus;
+    private javax.swing.JTextField jTextFieldStudentClass;
+    private javax.swing.JTextField jTextFieldStudentID;
     // End of variables declaration//GEN-END:variables
 }

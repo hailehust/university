@@ -10,7 +10,7 @@ import view.AdminView;
 import view.LoginView;
 import view.YearlyStudentView;
 import view.UnitStudentView;
-import view.ThayDoiPassView;
+import view.ChangePasswordView;
 
 /**
  *
@@ -446,11 +446,6 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         loginView.setVisible(true);
     }
 
-    //nghia
-    public void initPassSession(String mssv) {
-        ThayDoiPassView thayDoiPassView = new ThayDoiPassView(this, mssv);
-        thayDoiPassView.setVisible(true);
-    }
 
     public void initUserSession(String userID) {//khoi tao phien lam viec cho user (svtc/svnc/admin)
         User user = this.findAdmin(userID);

@@ -23,7 +23,7 @@ public class Program {
         hocPhan = new ArrayList<>();
     }
 
-    public Program(String programID, String programName, School schoolID, ArrayList<StudentClass> lopSinhVien, ArrayList<Course> hocPhan) {
+    public Program(String programID, String programName, School school, ArrayList<StudentClass> lopSinhVien, ArrayList<Course> hocPhan) {
         this.programID = programID;
         this.programName = programName;
         this.school = school;
@@ -65,7 +65,7 @@ public class Program {
     }
 
     public String getMaNganhHoc() {//chi get duoc ma nganh hoc
-        return school.getMaNganhHoc();
+        return this.school.getMaNganhHoc();
     }
 
     public void setNganhHoc(School school) {
