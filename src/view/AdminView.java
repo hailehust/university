@@ -1921,24 +1921,18 @@ public class AdminView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Please select the school that you want to delete!");
         } else {
             String schoolID = jTableSchool.getValueAt(selectedRow, 0).toString();
+
             for (School s : university.getSchoolList()) {
                 if (s.getMaNganhHoc().equals(schoolID)) {
-                    if (s.getChuongTrinhHoc().isEmpty()) {
 
-                        if (JOptionPane.showConfirmDialog(rootPane, "Are you sure?") == 0) {//dong y xoa school
+                    if (JOptionPane.showConfirmDialog(rootPane, "Are you sure?") == 0) {//dong y xoa school
 
-                            university.getSchoolList().remove(s);
-                            dao.deleteSchool(schoolID);
+                        university.getSchoolList().remove(s);
+                        dao.deleteSchool(schoolID);
 
-                            displaySchool();
-
-//                            JOptionPane.showMessageDialog(rootPane, "School deleted!");
-                            return;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(rootPane, "Unable to delete school that contain data!");
+                        displaySchool();
                         return;
+
                     }
 
                 }
@@ -1977,35 +1971,46 @@ public class AdminView extends javax.swing.JFrame {
 
     private void jButtonEditProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditProgramActionPerformed
         // TODO add your handling code here:
+        int selectedRow = jTableProgram.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(rootPane, "Please select program you want to edit");
+        } else {
+
+        }
 
     }//GEN-LAST:event_jButtonEditProgramActionPerformed
 
     private void jButtonDeleteProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteProgramActionPerformed
-        // TODO add your handling code here:
-        DAO dao = new DAO(university);
-        int selectedRow = jTableProgram.getSelectedRow();
-
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Please select program you want to delete!");
-            return;
-        } else {
-            if (JOptionPane.showConfirmDialog(rootPane, "Are you sure?") == 0) {//dong y xoa school
-
-                String programID = jTableProgram.getValueAt(selectedRow, 0).toString();
-                Program p = university.findProgram(programID);
-                //xoa cac tham thieu den p
-                university.getProgramList().remove(p);
-                university.findSchool(p.getMaNganhHoc()).getChuongTrinhHoc().remove(p);
-                for (Course c : university.getCourseList()) {
-                    c.getMaChuongTrinhHoc().remove(p);
-                }
-
-                //xoa trong database
-                dao.deleteProgram(programID);
-                displayProgram();
-            }
-
-        }
+//        // TODO add your handling code here:
+//        DAO dao = new DAO(university);
+//        int selectedRow = jTableProgram.getSelectedRow();
+//
+//        if (selectedRow == -1) {
+//            JOptionPane.showMessageDialog(rootPane, "Please select program you want to delete!");
+//        } else {
+//            String programID = jTableProgram.getValueAt(selectedRow, 0).toString();
+//            Program p = university.findProgram(programID);
+//
+//            if (p.getLopSinhVien().isEmpty() && ) {
+//                if (JOptionPane.showConfirmDialog(rootPane, "Are you sure?") == 0) {//dong y xoa school
+//
+//                    //xoa cac tham thieu den p
+//                    university.getProgramList().remove(p);
+//                    university.findSchool(p.getMaNganhHoc()).getChuongTrinhHoc().remove(p);
+//                    for (Course c : university.getCourseList()) {
+//                        c.getMaChuongTrinhHoc().remove(p);
+//                    }
+//
+//                    //xoa trong database
+//                    dao.deleteProgram(programID);
+//                    displayProgram();
+//                }
+//            } else {
+//                JOptionPane.showMessageDialog(rootPane, "Can't delete program that consist datas!");
+//            }
+//
+//        }
     }//GEN-LAST:event_jButtonDeleteProgramActionPerformed
 
 
