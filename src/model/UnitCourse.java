@@ -16,8 +16,8 @@ public class UnitCourse extends Course {
 		  maHocPhanTCDieuKien = new ArrayList<>();
 	 }
 
-	 public UnitCourse(String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuoiKy, ArrayList<String> programID) {
-		  super(maHocPhan, tenHocPhan, trongSoGiuaKy, trongSoCuoiKy, programID);
+	 public UnitCourse(String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuoiKy, ArrayList<Program> program) {
+		  super(maHocPhan, tenHocPhan, trongSoGiuaKy, trongSoCuoiKy, program);
 		  maHocPhanTCDieuKien = new ArrayList<>();
 
 	 }
@@ -26,8 +26,8 @@ public class UnitCourse extends Course {
 		  this.maHocPhanTCDieuKien = maHocPhanTCDieuKien;
 	 }
 
-	 public UnitCourse(ArrayList<String> maHocPhanTCDieuKien, String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuoiKy, ArrayList<String> programID) {
-		  super(maHocPhan, tenHocPhan, trongSoGiuaKy, trongSoCuoiKy, programID);
+	 public UnitCourse(ArrayList<String> maHocPhanTCDieuKien, String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuoiKy, ArrayList<Program> program) {
+		  super(maHocPhan, tenHocPhan, trongSoGiuaKy, trongSoCuoiKy, program);
 		  this.maHocPhanTCDieuKien = maHocPhanTCDieuKien;
 	 }
 

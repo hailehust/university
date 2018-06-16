@@ -17,8 +17,8 @@ public class YearlyCourse extends Course {
 	 }
 
 
-	 public YearlyCourse(int sttHocKy, String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuioiKy, ArrayList<String> programID) {
-		  super(maHocPhan, tenHocPhan, trongSoGiuaKy, trongSoCuioiKy, programID);
+	 public YearlyCourse(int sttHocKy, String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuioiKy, ArrayList<Program> program) {
+		  super(maHocPhan, tenHocPhan, trongSoGiuaKy, trongSoCuioiKy, program);
 		  this.sttHocKy = sttHocKy;
 	 }
 

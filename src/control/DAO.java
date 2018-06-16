@@ -29,7 +29,7 @@ public class DAO {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/quanlysv2", "root", "haile");
 
             System.out.println("Connected to MySQL succesfull!!");
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
@@ -53,7 +53,7 @@ public class DAO {
 
                 listAdmin.add(a);//them a vo danhSachAdmin
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -74,7 +74,7 @@ public class DAO {
 
                 a.setMaChuongTrinhHoc(rs.getString("maChuongTrinhHoc"));
                 a.setTenChuongTrinhHoc(rs.getString("tenChuongTrinhHoc"));
-                a.setMaNganhHoc(rs.getString("maNganhHoc"));
+                a.setNganhHoc(university.findSchool(rs.getString("maNganhHoc")));
 
                 listChuongTrinhHoc.add(a);//them a vo list
 
@@ -82,7 +82,7 @@ public class DAO {
                 university.findSchool(a.getMaNganhHoc()).getChuongTrinhHoc().add(a);
 
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -104,7 +104,7 @@ public class DAO {
                         .add(rs.getString("maChuongTrinhHoc"));
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
     }
@@ -128,7 +128,7 @@ public class DAO {
 
                 university.findSystemSemester(a.getSystemSemesterID()).getDangKyHocPhan().add(a);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -154,7 +154,7 @@ public class DAO {
 
                 listHocKyHeThong.add(a);//them a vo danhSachAdmin
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -179,7 +179,7 @@ public class DAO {
                 listHocKySinhVien.add(a);//them a vo danhSachAdmin
                 university.findStudent(a.getMssv()).getHocKySinhVien().add(a);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -201,7 +201,7 @@ public class DAO {
                         .add(university.findStudent(rs.getString("mssv")));
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
     }
@@ -222,7 +222,7 @@ public class DAO {
                         .getMssvDangKy().add(rs.getString("mssv"));
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
         }
     }
@@ -281,7 +281,7 @@ public class DAO {
                         .getMaHocPhanTCDieuKien().add(rs.getString("maHocPhanTCDieuKien"));
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -310,7 +310,7 @@ public class DAO {
 
                 university.findStudent(a.getMssv()).getBangDiem().add(a);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -338,7 +338,7 @@ public class DAO {
 
                 university.findSystemSemester(a.getSystemSemesterID()).getLopMo().add(a);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -365,7 +365,7 @@ public class DAO {
 
                 university.findProgram(a.getMaChuongTrinhHoc()).getLopSinhVien().add(a);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -389,7 +389,7 @@ public class DAO {
 
                 listNganhHoc.add(a);//them a vo danhSachAdmin
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -442,7 +442,7 @@ public class DAO {
                 }
 
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -460,7 +460,7 @@ public class DAO {
         try {
             PreparedStatement ps = conn.prepareStatement(sql);//thuc thi cau lenh sql cho database
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -474,7 +474,7 @@ public class DAO {
         try {
             PreparedStatement ps = conn.prepareStatement(sql);//thuc thi cau lenh sql cho database
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -485,7 +485,7 @@ public class DAO {
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -509,7 +509,7 @@ public class DAO {
             //khong chinh sua gi thi return 0
             //co thay doi database -> executeUpdate()
             //neu chi query du lieu -> executeQuery()
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -524,7 +524,7 @@ public class DAO {
             PreparedStatement ps = conn.prepareStatement(sql);//thuc thi cau lenh sql cho database
             ps.executeUpdate();//co chinh sua du lieu cua csdl thi return so luong ban ghi da chinh sua
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -544,7 +544,7 @@ public class DAO {
             //khong chinh sua gi thi return 0
             //co thay doi database -> executeUpdate()
             //neu chi query du lieu -> executeQuery()
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -557,7 +557,7 @@ public class DAO {
             PreparedStatement ps = conn.prepareStatement(sql);//thuc thi cau lenh sql cho database
 
             ps.executeUpdate();//co chinh sua du lieu cua csdl thi return so luong ban ghi da chinh sua
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -570,7 +570,7 @@ public class DAO {
             PreparedStatement ps = conn.prepareStatement(sql);//thuc thi cau lenh sql cho database
 
             ps.executeUpdate();//co chinh sua du lieu cua csdl thi return so luong ban ghi da chinh sua
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -590,7 +590,7 @@ public class DAO {
             //khong chinh sua gi thi return 0
             //co thay doi database -> executeUpdate()
             //neu chi query du lieu -> executeQuery()
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -613,7 +613,7 @@ public class DAO {
             //khong chinh sua gi thi return 0
             //co thay doi database -> executeUpdate()
             //neu chi query du lieu -> executeQuery()
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -632,7 +632,7 @@ public class DAO {
             //khong chinh sua gi thi return 0
             //co thay doi database -> executeUpdate()
             //neu chi query du lieu -> executeQuery()
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -654,7 +654,79 @@ public class DAO {
             //khong chinh sua gi thi return 0
             //co thay doi database -> executeUpdate()
             //neu chi query du lieu -> executeQuery()
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /*======================================EDUCATION MANAGEMENT==============================================================*/
+    public void addSchool(String schoolID, String schoolName) {
+        String sql = "INSERT INTO nganhhoc (maNganhHoc, tenNganhHoc) VALUES ('" + schoolID + "', '" + schoolName + "');";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.execute();
+        } catch (SQLException e) {
+        }
+    }
+
+    public void editSchool(String schoolID, String newSchoolID, String newSchoolName) {
+        String sql1 = "INSERT INTO nganhhoc(maNganhHoc, tenNganhHoc) VALUES(?, ?)";//them ban ghi school moi
+        String sql2 = "UPDATE chuongtrinhhoc SET `maNganhHoc`='" + newSchoolID
+                + "' WHERE `maNganhHoc`='" + schoolID + "'";//edit o cac cho tham chieu toi ban ghi cu
+        String sql3 = "UPDATE sinhvien SET `maNganhHoc`='" + newSchoolID
+                + "' WHERE `maNganhHoc`='" + schoolID + "'";//edit o cac cho tham chieu toi ban ghi cu
+        String sql4 = "DELETE FROM nganhhoc WHERE `maNganhHoc`='" + schoolID + "'";//xoa ban ghi cu
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql1);//thuc thi cau lenh sql cho database
+            //set gia tri cho tung cot cua bang Student
+            ps.setString(1, newSchoolID);//set ID cua sinh vien vao cot 1 cua bang
+            ps.setString(2, newSchoolName);//set tenSV vao cot 2
+            ps.executeUpdate();//khong chinh sua gi thi return 0
+            //co thay doi database -> executeUpdate()
+            //neu chi query du lieu -> executeQuery()
+
+            //thay doi cac noi tham chieu den ban ghi school cu
+            ps = conn.prepareStatement(sql2);
+            ps.executeUpdate();
+            ps = conn.prepareStatement(sql3);
+            ps.executeUpdate();
+//xoa ban ghi cu
+            ps = conn.prepareStatement(sql4);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSchool(String schoolID) {
+        String sql = "DELETE FROM nganhhoc WHERE `maNganhHoc`='" + schoolID + "'";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addProgram(String programID, String programName, String schoolID) {
+        String sql = "INSERT INTO chuongtrinhhoc (maChuongTrinhHoc, tenChuongTrinhHoc, maNganhHoc)"
+                + " VALUES ('" + programID + "', '" + programName + "', '" + schoolID + "');";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.execute();
+        } catch (SQLException e) {
+        }
+    }
+
+    public void deleteProgram(String programID) {
+        String sql = "DELETE FROM chuongtrinhhoc WHERE `maChuongTrinhHoc`='" + programID + "'";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.execute();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

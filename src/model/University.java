@@ -504,7 +504,7 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         //kiểm tra xem sinh viên đó có được đăng ký lớp đó, kỳ đó
         UnitStudent s = (UnitStudent) this.findStudent(mssv);
 
-        if (this.findCourseClass(maLopMo) == null || this.findCourse(this.findCourseClass(maLopMo).getMaHocPhan()) instanceof YearlyCourse ) {
+        if (this.findCourseClass(maLopMo) == null || this.findCourse(this.findCourseClass(maLopMo).getMaHocPhan()) instanceof YearlyCourse) {
             JOptionPane.showMessageDialog(null, "Wrong class!");
             return false;//ma lop mo sai  
 
@@ -517,7 +517,7 @@ public final class University {// this quản lý sinh viên (giống như hệ 
                 break;
             }
         }
-        
+
         if (flag == 0) {
             JOptionPane.showMessageDialog(null, "You have not registered the " + this.findCourseClass(maLopMo).getMaHocPhan() + " course!");
             return false;//sinh vien nay chua dang ky hoc phan cua lop mo
@@ -836,6 +836,18 @@ public final class University {// this quản lý sinh viên (giống như hệ 
 
             }
         }
+    }
+
+    /*==================================== EDUCATION MANAGEMENT ======================================================================*/
+    public void editSchool(String schoolID, String newSchoolID, String newSchoolName) {
+        DAO dao = new DAO(this);
+        School s = this.findSchool(schoolID);
+
+        dao.editSchool(schoolID, newSchoolID, newSchoolName);//chih sua o database
+
+        s.setMaNganhHoc(newSchoolID);
+        s.setTenNganhHoc(newSchoolName);
+
     }
 
 }//class University

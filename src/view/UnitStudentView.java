@@ -652,7 +652,8 @@ public class UnitStudentView extends javax.swing.JFrame {
 //        jComboBoxSystemSemesterID1.addItem("");
 //        jComboBoxSystemSemesterID2.addItem("");
 //        jComboBoxSystemSemesterID3.addItem("");
-        Collections.reverse(university.findStudent(mssv).getHocKySinhVien());//dao thu tu trong 
+        Collections.reverse(university.findStudent(mssv).getHocKySinhVien());//dao thu tu trong hoc ky cua sinh vien !
+                                                                            //not hoc ky he thong
 
         for (StudentSemester a : university.findStudent(mssv).getHocKySinhVien()) {
             jComboBoxSystemSemesterID1.addItem(a.getSystemSemesterID());

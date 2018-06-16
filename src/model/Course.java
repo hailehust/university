@@ -8,70 +8,71 @@ import java.util.ArrayList;
  */
 public class Course {
 
-	 /*=================== ATTRIBUTEs ==================================*/
-	 private String maHocPhan;
-	 private String tenHocPhan;
-	 private float trongSoGiuaKy;
-	 private float trongSoCuoiKy;
-	 
-	 private ArrayList<String> programID;
+    /*=================== ATTRIBUTEs ==================================*/
+    private String maHocPhan;
+    private String tenHocPhan;
+    private float trongSoGiuaKy;
+    private float trongSoCuoiKy;
 
-	 /*=================== CONSTRUCTORs ================================*/
+    private ArrayList<Program> program;
 
-	 public Course() {
-		  programID = new ArrayList<>();
-	 }
+    /*=================== CONSTRUCTORs ================================*/
+    public Course() {
+        program = new ArrayList<>();
+    }
 
-	 public Course(String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuoiKy, ArrayList<String> programID) {
-		  this.maHocPhan = maHocPhan;
-		  this.tenHocPhan = tenHocPhan;
-		  this.trongSoGiuaKy = trongSoGiuaKy;
-		  this.trongSoCuoiKy = trongSoCuoiKy;
-		  this.programID = programID;
-	 }
+    public Course(String maHocPhan, String tenHocPhan, float trongSoGiuaKy, float trongSoCuoiKy, ArrayList<Program> program) {
+        this.maHocPhan = maHocPhan;
+        this.tenHocPhan = tenHocPhan;
+        this.trongSoGiuaKy = trongSoGiuaKy;
+        this.trongSoCuoiKy = trongSoCuoiKy;
+        this.program = program;
+    }
 
 
-	 /*=================== GETTTERs & SETTERs  ============================*/
+    /*=================== GETTTERs & SETTERs  ============================*/
+    public String getMaHocPhan() {
+        return maHocPhan;
+    }
 
-	 public String getMaHocPhan() {
-		  return maHocPhan;
-	 }
+    public void setMaHocPhan(String maHocPhan) {
+        this.maHocPhan = maHocPhan;
+    }
 
-	 public void setMaHocPhan(String maHocPhan) {
-		  this.maHocPhan = maHocPhan;
-	 }
+    public String getTenHocPhan() {
+        return tenHocPhan;
+    }
 
-	 public String getTenHocPhan() {
-		  return tenHocPhan;
-	 }
+    public void setTenHocPhan(String tenHocPhan) {
+        this.tenHocPhan = tenHocPhan;
+    }
 
-	 public void setTenHocPhan(String tenHocPhan) {
-		  this.tenHocPhan = tenHocPhan;
-	 }
+    public float getTrongSoGiuaKy() {
+        return trongSoGiuaKy;
+    }
 
-	 public float getTrongSoGiuaKy() {
-		  return trongSoGiuaKy;
-	 }
+    public void setTrongSoGiuaKy(float trongSoGiuaKy) {
+        this.trongSoGiuaKy = trongSoGiuaKy;
+    }
 
-	 public void setTrongSoGiuaKy(float trongSoGiuaKy) {
-		  this.trongSoGiuaKy = trongSoGiuaKy;
-	 }
+    public float getTrongSoCuoiKy() {
+        return trongSoCuoiKy;
+    }
 
-	 public float getTrongSoCuoiKy() {
-		  return trongSoCuoiKy;
-	 }
+    public void setTrongSoCuoiKy(float trongSoCuoiKy) {
+        this.trongSoCuoiKy = trongSoCuoiKy;
+    }
 
-	 public void setTrongSoCuoiKy(float trongSoCuoiKy) {
-		  this.trongSoCuoiKy = trongSoCuoiKy;
-	 }
+    /*=================== OTHER METHODs  ===============================*/
+    public ArrayList<String> getMaChuongTrinhHoc() {//get list cac maChuongTrinhHoc cua course
+        ArrayList<String> programID = new ArrayList<>();
+        for (Program p : program) {
+            programID.add(p.getMaChuongTrinhHoc());
+        }
+        return programID;
+    }
 
-	 /*=================== OTHER METHODs  ===============================*/
-
-	 public ArrayList<String> getMaChuongTrinhHoc() {
-		  return programID;
-	 }
-
-	 public void setMaChuongTrinhHoc(ArrayList<String> programID) {
-		  this.programID = programID;
-	 }
+    public void setChuongTrinhHoc(Program p) {//chen 1 chuong trinh hoc ma hoc phan nam trong
+        this.program.add(p);
+    }
 }//class Course
