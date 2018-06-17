@@ -28,6 +28,7 @@ public class ChangePasswordView extends javax.swing.JFrame {
         initComponents();
         this.studentID = studentID;
         this.university = university;
+
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
@@ -158,10 +159,10 @@ public class ChangePasswordView extends javax.swing.JFrame {
                 dao.updatePassword(studentID, jTextFieldNewPassword1.getText());//update pass in data base
                 JOptionPane.showMessageDialog(rootPane, "Password changed!");
                 this.dispose();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(rootPane, "Please input new password and retype correctly!");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Wrong old password!");
         }
 

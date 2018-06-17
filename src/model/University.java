@@ -208,9 +208,9 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         return null;//khong tim thay
     }
 
-    public CourseRegistration findCourseRegistration(String maHocPhan, String maHocKyHeThong) {//tim School theo ma, tra ve 1 School (TC/NC)
+    public CourseRegistration findCourseRegistration(String maHocPhan, String systemSemesterID) {//tim School theo ma, tra ve 1 School (TC/NC)
         for (CourseRegistration a : courseRegistrationList) {
-            if (a.getMaHocPhan().equals(maHocPhan) && (a.getSystemSemesterID()).equals(maHocKyHeThong)) {
+            if (a.getMaHocPhan().equals(maHocPhan) && (a.getSystemSemesterID()).equals(systemSemesterID)) {
                 return a;
             }
         }
@@ -226,9 +226,9 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         return null;//khong tim thay
     }
 
-    public StudentSemester findStudentSemester(String mssv, String maHocKyHeThong) {//tim School theo ma, tra ve 1 School (TC/NC)
+    public StudentSemester findStudentSemester(String studentID, String systemSemesterID) {//tim School theo ma, tra ve 1 School (TC/NC)
         for (StudentSemester a : studentSemesterList) {
-            if (a.getMssv().equals(mssv) && (a.getSystemSemesterID()).equals(maHocKyHeThong)) {
+            if (a.getMssv().equals(studentID) && (a.getSystemSemesterID()).equals(systemSemesterID)) {
                 return a;
             }
         }
@@ -244,9 +244,9 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         return null;//khong tim thay
     }
 
-    public CourseResult findCourseResult(String mssv, String maHocPhan, String maHocKyHeThong) {//tim School theo ma, tra ve 1 School (TC/NC)
+    public CourseResult findCourseResult(String studentID, String maHocPhan, String systemSemesterID) {//tim School theo ma, tra ve 1 School (TC/NC)
         for (CourseResult a : courseResultList) {
-            if (a.getMssv().equals(mssv) && (a.getMaHocPhan().equals(maHocPhan)) && (a.getSystemSemesterID().equals(maHocKyHeThong))) {
+            if (a.getMssv().equals(studentID) && (a.getMaHocPhan().equals(maHocPhan)) && (a.getSystemSemesterID().equals(systemSemesterID))) {
                 return a;
             }
         }
@@ -446,7 +446,6 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         loginView.setVisible(true);
     }
 
-
     public void initUserSession(String userID) {//khoi tao phien lam viec cho user (svtc/svnc/admin)
         User user = this.findAdmin(userID);
         if (user == null) {//user la sinh vien
@@ -467,8 +466,8 @@ public final class University {// this quản lý sinh viên (giống như hệ 
     }
 
     /*=========================  CHECK METHODs : check khi sinh vien dang ky hoc tap  ==============================================*/
-    public boolean checkCourseRegistrationOfUnitStudent(String mssv, String maHocPhan, String maHocKyHeThong) {
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
+    public boolean checkCourseRegistrationOfUnitStudent(String studentID, String maHocPhan, String systemSemesterID) {
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
 
         int flag = 0;
         for (Course a : this.findProgram(s.getMaChuongTrinhHoc()).getHocPhan()) {
@@ -483,7 +482,7 @@ public final class University {// this quản lý sinh viên (giống như hệ 
             return false;//không tìm thấy học phần trong chương trình học của sinh viên 
         }
 
-        for (String a : this.findStudentSemester(mssv, maHocKyHeThong).getMaHocPhanDangKy()) {
+        for (String a : this.findStudentSemester(studentID, systemSemesterID).getMaHocPhanDangKy()) {
             if (a.equals(maHocPhan)) {
                 JOptionPane.showMessageDialog(null, "You have registered this course already!");
 
@@ -495,31 +494,31 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         return true;
     }
 
-    public boolean checkCourseClassRegistrationOfUnitStudent(String mssv, String maLopMo, String maHocKyHeThong) {
+    public boolean checkCourseClassRegistrationOfUnitStudent(String studentID, String courseClassID, String systemSemesterID) {
         //kiểm tra xem sinh viên đó có được đăng ký lớp đó, kỳ đó
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
 
-        if (this.findCourseClass(maLopMo) == null || this.findCourse(this.findCourseClass(maLopMo).getMaHocPhan()) instanceof YearlyCourse) {
+        if (this.findCourseClass(courseClassID) == null || this.findCourse(this.findCourseClass(courseClassID).getMaHocPhan()) instanceof YearlyCourse) {
             JOptionPane.showMessageDialog(null, "Wrong class!");
             return false;//ma lop mo sai  
 
         }
         int flag = 0;
-        for (String maHocPhan : this.findStudentSemester(mssv, maHocKyHeThong).getMaHocPhanDangKy()) {
+        for (String maHocPhan : this.findStudentSemester(studentID, systemSemesterID).getMaHocPhanDangKy()) {
             //duyet trong list maHocPhanDangKy cua hockysinh vien
-            if (this.findCourseClass(maLopMo).getMaHocPhan().equals(maHocPhan)) {
+            if (this.findCourseClass(courseClassID).getMaHocPhan().equals(maHocPhan)) {
                 flag = 1;
                 break;
             }
         }
 
         if (flag == 0) {
-            JOptionPane.showMessageDialog(null, "You have not registered the " + this.findCourseClass(maLopMo).getMaHocPhan() + " course!");
+            JOptionPane.showMessageDialog(null, "You have not registered the " + this.findCourseClass(courseClassID).getMaHocPhan() + " course!");
             return false;//sinh vien nay chua dang ky hoc phan cua lop mo
         }
 
-        for (String a : this.findStudentSemester(mssv, maHocKyHeThong).getMaLopMoDangKy()) {
-            if (this.findCourseClass(a).getMaHocPhan().equals(this.findCourseClass(maLopMo).getMaHocPhan())) {
+        for (String a : this.findStudentSemester(studentID, systemSemesterID).getMaLopMoDangKy()) {
+            if (this.findCourseClass(a).getMaHocPhan().equals(this.findCourseClass(courseClassID).getMaHocPhan())) {
                 JOptionPane.showMessageDialog(null, "You have registerd a class already for the " + this.findCourseClass(a).getMaHocPhan() + " course!");
                 return false;//nếu sinh viên đó, kỳ đó đã đăng ký lop do roi
             }
@@ -528,17 +527,17 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         return true;
     }
 
-    public boolean checkLopMoCuaHocPhanDieuKien(String mssv, String maHocPhan) {
+    public boolean checkLopMoCuaHocPhanDieuKien(String studentID, String maHocPhan) {
         //check xem toàn bộ các học phần điều kiện của maHocPhan đã được sinh viên học chưa
         //kiểm tra sinh viên này, đến thời điẻm hiện tại đã học các lớp của cac học phần là điều kiện của hocphan này chưa
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
         UnitCourse h = (UnitCourse) this.findCourse(maHocPhan);//hocPhak muon dang ky
         int soLopMoTimThay = 0;
 
         for (String maHocPhanDieuKien : h.getMaHocPhanTCDieuKien()) {//duyệt qua các học phần đk của hocPhan muốn học
             for (StudentSemester a : s.getHocKySinhVien()) {//duyệt qua các học kỳ sih viên của sinh viên 
-                for (String maLopMo : a.getMaLopMoDangKy()) {//duyệt qua các lớp mở của học kỳ đó
-                    if (this.findCourseClass(maLopMo).getMaHocPhan().equals(maHocPhanDieuKien)) {//học phần điều kiện đã được đăng ký lớp
+                for (String courseClassID : a.getMaLopMoDangKy()) {//duyệt qua các lớp mở của học kỳ đó
+                    if (this.findCourseClass(courseClassID).getMaHocPhan().equals(maHocPhanDieuKien)) {//học phần điều kiện đã được đăng ký lớp
                         soLopMoTimThay++;
                     }
                 }
@@ -553,11 +552,11 @@ public final class University {// this quản lý sinh viên (giống như hệ 
     }
 
     /*========================= DANG KY HOC TAP - chỉ có đăng ký học tập của kỳ mới nhất  ==============================================*/
-    public boolean registerCourseForUnitStudent(String mssv, String maHocPhan, String maHocKyHeThong, DAO dao) {
+    public boolean registerCourseForUnitStudent(String studentID, String maHocPhan, String systemSemesterID, DAO dao) {
 
-        SystemSemester h = this.findSystemSemester(maHocKyHeThong);
+        SystemSemester h = this.findSystemSemester(systemSemesterID);
         Course hocPhan = this.findCourse(maHocPhan);
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
 
         if (hocPhan == null || hocPhan instanceof YearlyCourse) {
             JOptionPane.showMessageDialog(null, "Wrong course!");
@@ -565,34 +564,34 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         }
         UnitCourse hptc = (UnitCourse) hocPhan;
 
-        if (!(maHocPhan.equals("") || maHocKyHeThong.equals(""))) {
+        if (!(maHocPhan.equals("") || systemSemesterID.equals(""))) {
             //đã nhập input
             if (this.getToday().after(h.getBatDauDangKyHocPhan()) && this.getToday().before(h.getBatDauDangKyLopMo())) {
                 //trong thời gian đăng ký học phần
-                if (hptc.getMaHocPhanTCDieuKien().isEmpty() || this.checkLopMoCuaHocPhanDieuKien(mssv, maHocPhan)) {
+                if (hptc.getMaHocPhanTCDieuKien().isEmpty() || this.checkLopMoCuaHocPhanDieuKien(studentID, maHocPhan)) {
                     //đã học hết các học phần điều kiện
-                    if (this.checkCourseRegistrationOfUnitStudent(mssv, maHocPhan, maHocKyHeThong)) {
+                    if (this.checkCourseRegistrationOfUnitStudent(studentID, maHocPhan, systemSemesterID)) {
 
                         //input chính xác: sinh viên được phép đăng ký học phần này, kỳ này
-                        CourseRegistration d = this.findCourseRegistration(maHocPhan, maHocKyHeThong);
+                        CourseRegistration d = this.findCourseRegistration(maHocPhan, systemSemesterID);
                         if (d == null) {//dangkyhocphan chưa tồn tại (chưa có sinh viên nào đăng ký học phần này, kỳ này)
                             //Cap nhat doi tuong
-                            d = new CourseRegistration(maHocPhan, maHocKyHeThong, new ArrayList<>());
-                            d.getMssvDangKy().add(mssv);
+                            d = new CourseRegistration(maHocPhan, systemSemesterID, new ArrayList<>());
+                            d.getMssvDangKy().add(studentID);
                             this.getCourseRegistrationList().add(d);
-                            this.findStudentSemester(mssv, maHocKyHeThong).getMaHocPhanDangKy().add(maHocPhan);
+                            this.findStudentSemester(studentID, systemSemesterID).getMaHocPhanDangKy().add(maHocPhan);
 
                             //Cap nhat csdl
                             dao.addCourseRegistration(d);
-                            dao.addStudentSemesterHasCourse(mssv, maHocKyHeThong, maHocPhan);
+                            dao.addStudentSemesterHasCourse(studentID, systemSemesterID, maHocPhan);
                         } else {
                             //Cap nhat doi tuong
-                            d.getMssvDangKy().add(mssv);
-                            this.findStudentSemester(mssv, maHocKyHeThong).getMaHocPhanDangKy().add(maHocPhan);
+                            d.getMssvDangKy().add(studentID);
+                            this.findStudentSemester(studentID, systemSemesterID).getMaHocPhanDangKy().add(maHocPhan);
 
                             //Cap nhat csdl
                             dao.updateCourseRegistration(d);
-                            dao.addStudentSemesterHasCourse(mssv, maHocKyHeThong, maHocPhan);								//Cap nhat csdl
+                            dao.addStudentSemesterHasCourse(studentID, systemSemesterID, maHocPhan);								//Cap nhat csdl
                         }
                         return true;
 
@@ -602,7 +601,7 @@ public final class University {// this quản lý sinh viên (giống như hệ 
                     JOptionPane.showMessageDialog(null, "You have not studied the conditional courses of " + maHocPhan + " !");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Course registration time of " + maHocKyHeThong + " is over!");
+                JOptionPane.showMessageDialog(null, "Course registration time of " + systemSemesterID + " is over!");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please input semester and course!");
@@ -611,68 +610,71 @@ public final class University {// this quản lý sinh viên (giống như hệ 
         return false;
     }
 
-    public boolean delelteCourseRegistrationOfUnitStudent(String mssv, String maHocPhan, String maHocKyHeThong, DAO dao) {
-        SystemSemester h = this.findSystemSemester(maHocKyHeThong);
+    public boolean delelteCourseRegistrationOfUnitStudent(String studentID, String maHocPhan, String systemSemesterID, DAO dao) {
+        SystemSemester h = this.findSystemSemester(systemSemesterID);
         UnitCourse hptc = ((UnitCourse) this.findCourse(maHocPhan));
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
-        CourseRegistration d = this.findCourseRegistration(maHocPhan, maHocKyHeThong);
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
+        CourseRegistration d = this.findCourseRegistration(maHocPhan, systemSemesterID);
 
         //đã nhập input
         if (this.getToday().after(h.getBatDauDangKyHocPhan()) && this.getToday().before(h.getBatDauDangKyLopMo())) {
-            //trong thời gian đăng ký học phần
-            //xoa o he thong
-            this.findCourseRegistration(maHocPhan, maHocKyHeThong).getMssvDangKy().remove(s.getMssv());
-            this.findStudentSemester(s.getMssv(), maHocKyHeThong).getMaHocPhanDangKy().remove(maHocPhan);
-            //xoa o csdl
-            if (d.getMssvDangKy().isEmpty()) {//neu dangky hoc phan ko co ai dang ky
-                dao.deleteCourseRegistration(d);
-                this.getCourseRegistrationList().remove(d);
-            } else {
-                dao.updateCourseRegistration(d);
+            if (JOptionPane.showConfirmDialog(null, "Are you sure?") == 0) {
+                //trong thời gian đăng ký học phần
+                //xoa o he thong
+                this.findCourseRegistration(maHocPhan, systemSemesterID).getMssvDangKy().remove(s.getMssv());
+                this.findStudentSemester(s.getMssv(), systemSemesterID).getMaHocPhanDangKy().remove(maHocPhan);
+                //xoa o csdl
+                if (d.getMssvDangKy().isEmpty()) {//neu dangky hoc phan ko co ai dang ky
+                    dao.deleteCourseRegistration(d);
+                    this.getCourseRegistrationList().remove(d);
+                } else {
+                    dao.updateCourseRegistration(d);
+                }
+
+                dao.deleteStudentSemesterHasCourse(s.getMssv(), systemSemesterID, maHocPhan);
+                return true;
             }
 
-            dao.deleteStudentSemesterHasCourse(s.getMssv(), maHocKyHeThong, maHocPhan);
-            return true;
-
         } else {
-            JOptionPane.showMessageDialog(null, "Course registration time of " + maHocKyHeThong + " is over!");
+            JOptionPane.showMessageDialog(null, "Course registration time of " + systemSemesterID + " is over!");
             return false;
         }
+        return false;
 
     }
 
-    public boolean registerCourseClassForUnitStudent(String mssv, String maLopMo, String maHocKyHeThong, DAO dao) {
-        SystemSemester h = this.findSystemSemester(maHocKyHeThong);
+    public boolean registerCourseClassForUnitStudent(String studentID, String courseClassID, String systemSemesterID, DAO dao) {
+        SystemSemester h = this.findSystemSemester(systemSemesterID);
         CourseClass lopMo;
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
 
-        if (!(maLopMo.equals("") || maHocKyHeThong.equals(""))) {
+        if (!(courseClassID.equals("") || systemSemesterID.equals(""))) {
             //đã nhập input
             if (this.getToday().after(h.getBatDauDangKyLopMo()) && this.getToday().before(h.getBatDauHocKy())) {
                 //trong thời gian đăng ký lopMo
 
-                if (this.checkCourseClassRegistrationOfUnitStudent(mssv, maLopMo, maHocKyHeThong)) {
-                    lopMo = this.findCourseClass(maLopMo);
-                    if (!(lopMo.getSoLuongSinhVienToiDa() == this.findCourseClass(maLopMo).getSinhVien().size())) {
+                if (this.checkCourseClassRegistrationOfUnitStudent(studentID, courseClassID, systemSemesterID)) {
+                    lopMo = this.findCourseClass(courseClassID);
+                    if (!(lopMo.getSoLuongSinhVienToiDa() == this.findCourseClass(courseClassID).getSinhVien().size())) {
 
                         // cap nhat thong tin vo university
-                        lopMo.getSinhVien().add(this.findStudent(mssv));
-                        this.findStudentSemester(mssv, maHocKyHeThong).getMaLopMoDangKy().add(lopMo.getMaLopMo());
+                        lopMo.getSinhVien().add(this.findStudent(studentID));
+                        this.findStudentSemester(studentID, systemSemesterID).getMaLopMoDangKy().add(lopMo.getMaLopMo());
                         //cap nhat du lieu vo csdl
 
                         dao.updateCourseClassRegistration(lopMo);
-                        dao.addStudentSemesterHasCourseClass(mssv, maHocKyHeThong, maLopMo);
+                        dao.addStudentSemesterHasCourseClass(studentID, systemSemesterID, courseClassID);
                         return true;
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Class " + maLopMo + " is full!");
+                        JOptionPane.showMessageDialog(null, "Class " + courseClassID + " is full!");
                     }
 
                 } else {
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "Class registration time of " + maHocKyHeThong + " is over!");
+                JOptionPane.showMessageDialog(null, "Class registration time of " + systemSemesterID + " is over!");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please input semester and class!");
@@ -681,33 +683,36 @@ public final class University {// this quản lý sinh viên (giống như hệ 
 
     }
 
-    public boolean deleteCourseClassRegistrationOfUnitStudent(String mssv, String maLopMo, String maHocKyHeThong, DAO dao) {
+    public boolean deleteCourseClassRegistrationOfUnitStudent(String studentID, String courseClassID, String systemSemesterID, DAO dao) {
 
-        SystemSemester h = this.findSystemSemester(maHocKyHeThong);
-        UnitStudent s = (UnitStudent) this.findStudent(mssv);
+        SystemSemester h = this.findSystemSemester(systemSemesterID);
+        UnitStudent s = (UnitStudent) this.findStudent(studentID);
         CourseClass l;//đã nhập input
         if (this.getToday().after(h.getBatDauDangKyLopMo()) && this.getToday().before(h.getBatDauHocKy())) {
-            //trong thời gian đăng ký học phần
-            //xoa o he thong
-            this.findCourseClass(maLopMo).getSinhVien().remove(s);
-            this.findStudentSemester(s.getMssv(), maHocKyHeThong).getMaLopMoDangKy().remove(maLopMo);
-            //xoa o csdl
-            l = this.findCourseClass(maLopMo);
+            if (JOptionPane.showConfirmDialog(null, "Are you sure?") == 0) {
+                //trong thời gian đăng ký học phần
+                //xoa o he thong
+                this.findCourseClass(courseClassID).getSinhVien().remove(s);
+                this.findStudentSemester(s.getMssv(), systemSemesterID).getMaLopMoDangKy().remove(courseClassID);
+                //xoa o csdl
+                l = this.findCourseClass(courseClassID);
 
-            if (l.getSinhVien().isEmpty()) {//neu mop mo ko co ai dang ky
-                //khong xoa lop mo
-                dao.updateCourseClassRegistration(l);
-            } else {
-                dao.updateCourseClassRegistration(l);
+                if (l.getSinhVien().isEmpty()) {//neu mop mo ko co ai dang ky
+                    //khong xoa lop mo
+                    dao.updateCourseClassRegistration(l);
+                } else {
+                    dao.updateCourseClassRegistration(l);
+                }
+
+                dao.deleteStudentSemesterHasCourseClass(s.getMssv(), systemSemesterID, courseClassID);
+                return true;
             }
 
-            dao.deleteStudentSemesterHasCourseClass(s.getMssv(), maHocKyHeThong, maLopMo);
-            return true;
-
         } else {
-            JOptionPane.showMessageDialog(null, "Class registration time of " + maHocKyHeThong + " is over!");
+            JOptionPane.showMessageDialog(null, "Class registration time of " + systemSemesterID + " is over!");
             return false;
         }
+        return false;
     }
 
     public void registerCourseForAllYearlyStudent(DAO dao) {

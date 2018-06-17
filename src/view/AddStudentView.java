@@ -318,7 +318,7 @@ public class AddStudentView extends javax.swing.JFrame {
             {
                // AdminView.jTable1.setModel(new DefaultTableModel(null, new Object[]{"heSinhVien","mssv","fullName","username","maNganh","maChuongTrinh","maLop","trangThai","hocki"}));
                 
-                dao.fillStudentJtable(AdminView.jTableStudent, "");
+//                dao.fillStudentJtable(AdminView.jTableStudent, "");
                // university hethong = new university();
                 ArrayList<SystemSemester> hockyhethong = new ArrayList<SystemSemester>();
 //                ArrayList<StudentSemester> studentSemesterList = 
