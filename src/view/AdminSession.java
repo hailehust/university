@@ -95,7 +95,7 @@ public class AdminSession extends javax.swing.JFrame {
 
         //duc
         modelSinhVien = (DefaultTableModel) jTableStudent.getModel();
-        DAO dao = new DAO(university);
+//        DAO dao = new DAO(university);
 
     }
 
@@ -128,7 +128,7 @@ public class AdminSession extends javax.swing.JFrame {
         jTextFieldStudentStudentClassIDEdit = new javax.swing.JTextField();
         jTextFieldStudentStatusEdit = new javax.swing.JTextField();
         jLabel_find = new javax.swing.JLabel();
-        jTextField_find = new javax.swing.JTextField();
+        jTextFieldValue = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableStudent = new javax.swing.JTable();
         jLabelStudentFullname = new javax.swing.JLabel();
@@ -181,6 +181,8 @@ public class AdminSession extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jTextFieldProgramStudentClassEdit = new javax.swing.JTextField();
         jLabelProgram = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jTextFieldProgramSchoolEdit = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTableStudentClass = new javax.swing.JTable();
@@ -329,20 +331,20 @@ public class AdminSession extends javax.swing.JFrame {
 
         jLabel_find.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_find.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/icons8-search-25.png"))); // NOI18N
-        jLabel_find.setText("Enter value to search student");
+        jLabel_find.setText("Search student by ID");
 
-        jTextField_find.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField_find.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldValue.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldValue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_findActionPerformed(evt);
+                jTextFieldValueActionPerformed(evt);
             }
         });
-        jTextField_find.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldValue.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField_findKeyPressed(evt);
+                jTextFieldValueKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField_findKeyReleased(evt);
+                jTextFieldValueKeyReleased(evt);
             }
         });
 
@@ -422,7 +424,7 @@ public class AdminSession extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addGap(209, 209, 209)
-                        .addComponent(jTextField_find, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldValue, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel_find)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -513,7 +515,7 @@ public class AdminSession extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addComponent(jButton3))
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(jTextField_find, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel_find)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -819,9 +821,15 @@ public class AdminSession extends javax.swing.JFrame {
 
         jLabel16.setText("Student");
 
+        jTextFieldProgramStudentEdit.setEnabled(false);
+
         jLabel17.setText("Classes");
 
+        jTextFieldProgramStudentClassEdit.setEnabled(false);
+
         jLabelProgram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/icons8-study-75.png"))); // NOI18N
+
+        jLabel28.setText("School");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -844,23 +852,29 @@ public class AdminSession extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
+                            .addComponent(jLabelProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel11Layout.createSequentialGroup()
+                                    .addComponent(jLabel28)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldProgramSchoolEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel11Layout.createSequentialGroup()
+                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel14)
+                                        .addComponent(jLabel15))
+                                    .addGap(31, 31, 31)
+                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldProgramNameEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldProgramIDEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldProgramNameEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldProgramIDEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldProgramStudentEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldProgramStudentClassEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jLabelProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldProgramStudentEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldProgramStudentClassEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -881,7 +895,11 @@ public class AdminSession extends javax.swing.JFrame {
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(jTextFieldProgramNameEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(jTextFieldProgramSchoolEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
                             .addComponent(jTextFieldProgramStudentClassEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -889,7 +907,7 @@ public class AdminSession extends javax.swing.JFrame {
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
                             .addComponent(jTextFieldProgramStudentEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68)))
+                        .addGap(39, 39, 39)))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldProgramID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonSearchProgram)
@@ -1186,7 +1204,7 @@ public class AdminSession extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPaneSchool, javax.swing.GroupLayout.DEFAULT_SIZE, 1189, Short.MAX_VALUE)
+            .addComponent(jTabbedPaneSchool, javax.swing.GroupLayout.PREFERRED_SIZE, 1189, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1546,7 +1564,7 @@ public class AdminSession extends javax.swing.JFrame {
                     .addComponent(jLabelToday)
                     .addComponent(jLabelSystemSemester))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, Short.MAX_VALUE))
         );
 
         pack();
@@ -1589,6 +1607,27 @@ public class AdminSession extends javax.swing.JFrame {
                 studentModel.addRow(new Object[]{
                     "NC", s.getMssv(), s.getHoTen(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
                 });
+            }
+        }
+    }
+
+    public void displayStudentWhenTyping(String value) {
+        studentModel.setRowCount(0);
+
+        for (Student s : university.getStudentList()) {
+            if (s.getMssv().contains(value) || s.getHoTen().contains(value)
+                    || s.getTrangThai().contains(value) /*|| s.getBangTotNghiep().contains(value)*/
+                    || s.getMaNganhHoc().contains(value) || s.getMaChuongTrinhHoc().contains(value) || s.getMaLopSinhVien().contains(value)) {
+
+                if (s instanceof UnitStudent) {
+                    studentModel.addRow(new Object[]{
+                        "TC", s.getMssv(), s.getHoTen(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
+                    });
+                } else {
+                    studentModel.addRow(new Object[]{
+                        "NC", s.getMssv(), s.getHoTen(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
+                    });
+                }
             }
         }
     }
@@ -1641,7 +1680,7 @@ public class AdminSession extends javax.swing.JFrame {
                 studentNumber += sc.getSinhVien().size();
             }
             programModel.addRow(new Object[]{
-                p.getMaChuongTrinhHoc(), p.getTenChuongTrinhHoc(), university.findSchool(p.getMaNganhHoc()).getTenNganhHoc(), studentClassNumber, studentNumber
+                p.getMaChuongTrinhHoc(), p.getTenChuongTrinhHoc(), p.getMaNganhHoc(), studentClassNumber, studentNumber
             });
             studentClassNumber = 0;
             studentNumber = 0;
@@ -1767,24 +1806,23 @@ public class AdminSession extends javax.swing.JFrame {
     }
 
     //duc
-    public void displaySinhVien() {
-
-        university.getStudentList().forEach((s) -> {
-            if (s instanceof UnitStudent) {
-                modelSinhVien.addRow(new Object[]{
-                    "TC", s.getMssv(), s.getHoTen(), s.getUsername(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
-
-                });
-            } else {
-                modelSinhVien.addRow(new Object[]{
-                    "NC", s.getMssv(), s.getHoTen(), s.getUsername(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
-
-                });
-
-            }
-        });
-    }
-
+//    public void displaySinhVien() {
+//
+//        university.getStudentList().forEach((s) -> {
+//            if (s instanceof UnitStudent) {
+//                modelSinhVien.addRow(new Object[]{
+//                    "TC", s.getMssv(), s.getHoTen(), s.getUsername(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
+//
+//                });
+//            } else {
+//                modelSinhVien.addRow(new Object[]{
+//                    "NC", s.getMssv(), s.getHoTen(), s.getUsername(), s.getMaNganhHoc(), s.getMaChuongTrinhHoc(), s.getMaLopSinhVien(), s.getTrangThai(), s.getBangTotNghiep()
+//
+//                });
+//
+//            }
+//        });
+//    }
 //    public boolean verifText() {
 //        if (jTextField_hovaten.getText().equals("") || jTextField_username.getText().equals("") || jTextField_mssv.getText().equals("")
 //                || jTextField_manganhhoc.getText().equals("") || jTextField_machuongtrinhhoc.getText().equals("")) {
@@ -1843,17 +1881,19 @@ public class AdminSession extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldStudentStatusEditActionPerformed
 
-    private void jTextField_findActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_findActionPerformed
+    private void jTextFieldValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_findActionPerformed
+    }//GEN-LAST:event_jTextFieldValueActionPerformed
 
-    private void jTextField_findKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_findKeyPressed
+    private void jTextFieldValueKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldValueKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_findKeyPressed
+    }//GEN-LAST:event_jTextFieldValueKeyPressed
 
-    private void jTextField_findKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_findKeyReleased
+    private void jTextFieldValueKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldValueKeyReleased
+        String value = jTextFieldValue.getText();
+        displayStudentWhenTyping(value);
 
-    }//GEN-LAST:event_jTextField_findKeyReleased
+    }//GEN-LAST:event_jTextFieldValueKeyReleased
 
     private void jTableStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableStudentMouseClicked
         // TODO add your handling code here:
@@ -2018,8 +2058,9 @@ public class AdminSession extends javax.swing.JFrame {
         jLabelProgram.setText(jTableProgram.getValueAt(selectedRow, 1).toString());
         jTextFieldProgramIDEdit.setText(jTableProgram.getValueAt(selectedRow, 0).toString());
         jTextFieldProgramNameEdit.setText(jTableProgram.getValueAt(selectedRow, 1).toString());
-        jTextFieldProgramStudentClassEdit.setText(jTableProgram.getValueAt(selectedRow, 2).toString());
-        jTextFieldProgramStudentEdit.setText(jTableProgram.getValueAt(selectedRow, 3).toString());
+        jTextFieldProgramSchoolEdit.setText(jTableProgram.getValueAt(selectedRow, 2).toString());
+        jTextFieldProgramStudentClassEdit.setText(jTableProgram.getValueAt(selectedRow, 3).toString());
+        jTextFieldProgramStudentEdit.setText(jTableProgram.getValueAt(selectedRow, 4).toString());
 
     }//GEN-LAST:event_jTableProgramMouseClicked
 
@@ -2029,13 +2070,28 @@ public class AdminSession extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAddProgramActionPerformed
 
     private void jButtonEditProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditProgramActionPerformed
-        // TODO add your handling code here:
+        DAO dao = new DAO(university);
+
         int selectedRow = jTableProgram.getSelectedRow();
-
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Please select program you want to edit");
+            JOptionPane.showMessageDialog(rootPane, "Please select program that you want to edit!");
         } else {
+            if (!(jTableProgram.getValueAt(selectedRow, 0).toString().equals(jTextFieldProgramIDEdit.getText()))) {
+                if (university.findSchool(jTextFieldProgramSchoolEdit.getText()) != null) {
 
+                    university.editProgram(jTableProgram.getValueAt(selectedRow, 0).toString(),
+                            jTextFieldProgramIDEdit.getText(),
+                            jTextFieldProgramNameEdit.getText(),
+                            jTextFieldProgramSchoolEdit.getText()
+                    );
+                    JOptionPane.showMessageDialog(rootPane, "Program is edited!");
+                    displayProgram();
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "wrong school ID !");
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Nothing changed!");
+            }
         }
     }//GEN-LAST:event_jButtonEditProgramActionPerformed
 
@@ -2228,6 +2284,7 @@ public class AdminSession extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -2303,6 +2360,7 @@ public class AdminSession extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldProgramID;
     private javax.swing.JTextField jTextFieldProgramIDEdit;
     private javax.swing.JTextField jTextFieldProgramNameEdit;
+    private javax.swing.JTextField jTextFieldProgramSchoolEdit;
     private javax.swing.JTextField jTextFieldProgramStudentClassEdit;
     private javax.swing.JTextField jTextFieldProgramStudentEdit;
     private javax.swing.JTextField jTextFieldSchoolID;
@@ -2325,7 +2383,7 @@ public class AdminSession extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldStudentStatusEdit;
     private javax.swing.JTextField jTextFieldStudentStudentClassIDEdit;
     private javax.swing.JTextField jTextFieldStudentStudentIDEdit;
-    private javax.swing.JTextField jTextField_find;
+    private javax.swing.JTextField jTextFieldValue;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }

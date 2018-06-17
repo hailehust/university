@@ -851,4 +851,15 @@ public final class University {// this quản lý sinh viên (giống như hệ 
 
     }
 
+    public void editProgram(String programID, String newProgramID, String newProgramName, String newSchoolID) {
+        DAO dao = new DAO(this);
+        Program p = this.findProgram(programID);
+
+        dao.editProgram(programID, newProgramID, newProgramName, newSchoolID);//chih sua o database
+        
+        p.setMaChuongTrinhHoc(newProgramID);
+        p.setTenChuongTrinhHoc(newProgramName);
+        p.setNganhHoc(this.findSchool(newSchoolID));
+    }
+
 }//class University

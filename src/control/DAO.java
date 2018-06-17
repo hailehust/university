@@ -701,6 +701,44 @@ public class DAO {
         }
     }
 
+    public void editProgram(String programID, String newProgramID, String newProgramName, String newSchoolID) {
+        String sql1 = "INSERT INTO chuongtrinhhoc(maChuongTrinhHoc, tenChuongTrinhHoc, maNganhHoc)"
+                + " VALUES(?, ?, ?)";//them ban ghi school moi
+        String sql2 = "UPDATE lopsinhvien SET `maChuongTrinhHoc`='" + newProgramID
+                + "' WHERE `maChuongTrinhHoc`='" + programID + "'";//edit o cac cho tham chieu toi ban ghi cu\
+        String sql3 = "UPDATE chuongtrinhhoc_baogom_hocphan SET `maChuongTrinhHoc`='" + newProgramID
+                + "' WHERE `maChuongTrinhHoc`='" + programID + "'";//edit o cac cho tham chieu toi ban ghi cu\
+
+        String sql4 = "UPDATE sinhvien SET `maChuongTrinhHoc`='" + newProgramID
+                + "' WHERE `maChuongTrinhHoc`='" + programID + "'";//edit o cac cho tham chieu toi ban ghi cu
+        String sql5 = "DELETE FROM chuongtrinhhoc WHERE `maChuongTrinhHoc`='" + programID + "'";//xoa ban ghi cu
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql1);//thuc thi cau lenh sql cho database
+            //set gia tri cho tung cot cua bang Student
+            ps.setString(1, newProgramID);//set ID cua sinh vien vao cot 1 cua bang
+            ps.setString(2, newProgramName);//set tenSV vao cot 2
+            ps.setString(3, newSchoolID);//set tenSV vao cot 2
+            ps.executeUpdate();//khong chinh sua gi thi return 0
+            //co thay doi database -> executeUpdate()
+            //neu chi query du lieu -> executeQuery()
+
+            //thay doi cac noi tham chieu den ban ghi school cu
+            ps = conn.prepareStatement(sql2);
+            ps.executeUpdate();
+            ps = conn.prepareStatement(sql3);
+            ps.executeUpdate();
+//xoa ban ghi cu
+            ps = conn.prepareStatement(sql4);
+            ps.executeUpdate();
+            ps = conn.prepareStatement(sql5);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void deleteSchool(String schoolID) {
         String sql = "DELETE FROM nganhhoc WHERE `maNganhHoc`='" + schoolID + "'";
         try {
