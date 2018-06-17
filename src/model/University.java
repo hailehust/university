@@ -6,10 +6,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
-import view.AdminView;
-import view.LoginView;
-import view.YearlyStudentView;
-import view.UnitStudentView;
+import view.AdminSession;
+import view.LoginSession;
+import view.YearlyStudentSession;
+import view.UnitStudentSession;
 import view.ChangePasswordView;
 
 /**
@@ -442,7 +442,7 @@ public final class University {// this quản lý sinh viên (giống như hệ 
     }
 
     public void initLoginSession(DAO dao) {//khoi tao phien dang nhap
-        LoginView loginView = new LoginView(this);
+        LoginSession loginView = new LoginSession(this);
         loginView.setVisible(true);
     }
 
@@ -452,15 +452,16 @@ public final class University {// this quản lý sinh viên (giống như hệ 
             user = findStudent(userID);
 
             if (user instanceof UnitStudent) {
-                UnitStudentView sinhVienTCView = new UnitStudentView(this, ((UnitStudent) user).getMssv());//khoi tao loginView
+                UnitStudentSession sinhVienTCView = new UnitStudentSession(this, ((UnitStudent) user).getMssv());//khoi tao loginView
                 sinhVienTCView.setVisible(true);
             } else {
-
-                YearlyStudentView sinhVienNCView = new YearlyStudentView(this, ((YearlyStudent) user).getMssv());//khoi tao loginView
+//                System.out.println("111");
+                YearlyStudentSession sinhVienNCView = new YearlyStudentSession(this, ((YearlyStudent) user).getMssv());//khoi tao loginView
+                System.out.println("11");
                 sinhVienNCView.setVisible(true);
             }
         } else {//user la admin
-            AdminView adminView = new AdminView(this, ((Admin) user).getAdminID());
+            AdminSession adminView = new AdminSession(this, ((Admin) user).getAdminID());
             adminView.setVisible(true);
         }
     }

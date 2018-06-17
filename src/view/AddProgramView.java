@@ -17,12 +17,12 @@ import model.School;
  */
 public class AddProgramView extends javax.swing.JFrame {
 
-    private AdminView adminView;
+    private AdminSession adminView;
 
     /**
      * Creates new form AddProgramView
      */
-    public AddProgramView(AdminView adminView) {
+    public AddProgramView(AdminSession adminView) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
